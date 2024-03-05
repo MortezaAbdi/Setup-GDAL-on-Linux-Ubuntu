@@ -1,0 +1,66 @@
+Installing GDAL on linux is full of problems and issues - this has resolved some of them for me:
+
+
+```
+sudo apt install libpq-dev 
+
+```
+
+problem depedency with libpq5
+
+```
+sudo apt install libpq5=12.2-4
+
+sudo apt install libpq-dev 
+```
+success!
+
+
+```
+sudo apt install gdal-bin
+sudo apt install libgdal-dev 
+
+```
+
+
+problem with LOTS of dependencies
+
+```
+sudo apt install aptitude 
+
+```
+
+(aptitude can help resolve dependency problems)
+
+```
+sudo aptitude install libgdal-dev 
+```
+
+After these steps are successfull check if all 3 main libs are installed: "libpq-dev, gdal-bin, libgdal-dev":
+
+apt list --installed | grep "gdal"
+
+
+Check gdal version (should be 3.3.2 or higher if all went well):
+
+```
+gdalinfo --version
+```
+
+PYTHON
+to install gdal in a python environment should now be possible:
+
+```
+poetry add gdal==3.3.0
+```
+Or 
+```
+pip install gdal==3.3.0
+```
+Or
+```
+pip install gdal==3.3.0
+```
+
+
+
